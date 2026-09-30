@@ -300,7 +300,6 @@ void searchSupplierByName(const Supplier list[], int count)
     }
 }
 
-/* Lists every supplier in the town the user types. */
 void searchSupplierByTown(const Supplier list[], int count)
 {
     char town[SUPPLIER_TOWN_LEN];
