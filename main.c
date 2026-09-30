@@ -1,26 +1,16 @@
-/*
- * main.c
- * Municipal Financial Management System (MFMS) - Project A
- * PAP521S Programming in Practice
- *
- * main.c is the hub of the program. It shows the main menu, reads a valid
- * choice and calls one menu function per module. It does not hold any
- * module data (employees, budgets, etc.) - each module owns its own data.
- */
 
 #include <stdio.h>
 
-#include "input.h"      /* readInt(), readFloat(), readString() */
-#include "employees.h"  /* employeeMenu() */
-#include "budget.h"     /* budgetMenu()   */
-#include "suppliers.h"  /* supplierMenu() */
-#include "assets.h"     /* assetMenu()    */
-#include "reports.h"    /* reportsMenu()  */
+#include "input.h"     
+#include "employees.h" 
+#include "budget.h"    
+#include "suppliers.h" 
+#include "assets.h"     
+#include "reports.h"    
 
 #define MENU_MIN 1
 #define MENU_EXIT 6
 
-/* Prints the main menu. */
 void displayMenu(void)
 {
     printf("\n========================================\n");
@@ -34,7 +24,6 @@ void displayMenu(void)
     printf("6. Exit\n");
 }
 
-/* Sends the user to the module they chose. */
 void handleChoice(int choice)
 {
     switch (choice)
@@ -58,7 +47,6 @@ void handleChoice(int choice)
             printf("\nExiting the system. Goodbye.\n");
             break;
         default:
-            /* Not reachable: readInt() only returns 1 to 6. */
             printf("Invalid choice. Please enter a number from 1 to 6.\n");
             break;
     }
@@ -71,7 +59,6 @@ int main(void)
     do
     {
         displayMenu();
-        /* readInt() rejects letters and numbers outside 1-6 and asks again. */
         choice = readInt("Enter your choice: ", MENU_MIN, MENU_EXIT);
         handleChoice(choice);
     } while (choice != MENU_EXIT);
