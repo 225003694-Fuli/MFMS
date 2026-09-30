@@ -1,35 +1,74 @@
 #include <stdio.h>
 #include <string.h>
-struct Employee
-{
-    int id;
-    char name[50];
-    char department[50];
-    float basicSalary;
-    float housingAllowance;
-    float transportAllowance;
-};
+#include "employees.h"
+
  struct Employee employees[100];
  int employeeCount = 0;
-void displayEmployees(struct Employee employees[], int employeeCount);
-void searchEmployee(struct Employee employees[], int employeeCount);
-void calculateSalary(struct Employee employees[], int employeeCount);
+
 void addEmployee(struct Employee employees[], int *employeeCount)
 {
-    printf("\nADD EMPLOYEE\n");
-    printf("Enter Employee ID:");
+    if (*employeeCount >= 100)
+{
+    printf("Employee list is full. Cannot add more employees.\n");
+    return;
+}
+     printf("\nADD EMPLOYEE\n");
+
+    do
+{
+    printf("Enter Employee ID: ");
     scanf("%d", &employees[*employeeCount].id);
+
+    if (employees[*employeeCount].id <= 0)
+    {
+        printf("Invalid Employee ID. Please enter a positive number.\n");
+    }
+
+} 
+  while (employees[*employeeCount].id <= 0);
     printf("Enter Name:");
     scanf(" %[^\n]", employees[*employeeCount].name);
     printf("Enter Department:");
     scanf(" %[^\n]", employees[*employeeCount].department);
-    printf("Enter Basic Salary:");
+    do
+{
+    printf("Enter Basic Salary: ");
     scanf("%f", &employees[*employeeCount].basicSalary);
-    printf("Enter Housing Allowance:");
+
+    if (employees[*employeeCount].basicSalary < 0)
+    {
+        printf("Invalid salary. Salary cannot be negative.\n");
+    }
+
+} 
+  while (employees[*employeeCount].basicSalary < 0);
+   
+  do
+{
+    printf("Enter Housing Allowance: ");
     scanf("%f", &employees[*employeeCount].housingAllowance);
-    printf("Enter Transport Allowance:");
+
+    if (employees[*employeeCount].housingAllowance < 0)
+    {
+        printf("Invalid allowance. Housing allowance cannot be negative.\n");
+    }
+
+}
+  while (employees[*employeeCount].housingAllowance < 0);
+   
+  do
+{
+    printf("Enter Transport Allowance: ");
     scanf("%f", &employees[*employeeCount].transportAllowance);
-    
+
+    if (employees[*employeeCount].transportAllowance < 0)
+    {
+        printf("Invalid allowance. Transport allowance cannot be negative.\n");
+    }
+
+} 
+  while (employees[*employeeCount].transportAllowance < 0);
+
     (*employeeCount)++;
 
     printf("Employee added successfully.\n");
