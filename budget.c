@@ -4,7 +4,8 @@
 void enterBudget(DepartmentBudget departments[], int *count)
 {
     if (*count >= MAX_DEPARTMENTS)
-}
+    {
+
     printf("Maximum number of departments reached.\n");
     return;
 }
@@ -14,7 +15,7 @@ printf("Enter Department ID: ");
 scanf("%d", &departments[*count].departmentID);
 
 printf("Enter Department Name: ");
-scanf("%49[^\n]", departments[*count].departmentName);
+scanf(" %49[^\n]", departments[*count].departmentName);
 
 printf("Enter Budget Amount: N$");
 scanf("%f", &departments[*count].budget);
@@ -59,7 +60,7 @@ float calculateRemainingBudget(DepartmentBudget department)
 {
     return department.budget - department.expenditure;
 }
-int isWithBudget(DepartmentBudget department)
+int isWithinBudget(DepartmentBudget department)
 {
     return department.expenditure <= department.budget;
 }
@@ -109,7 +110,7 @@ void identifyExceededBudgets(DepartmentBudget departments[], int count)
 
     printf("\n----------DEPARTMENTS OVER BUDGET---------\n");
 
-    for(int i = o; i < count; i++)
+    for(int i = 0 ; i < count; i++)
     {
         if(!isWithinBudget(departments[i]))
         {
