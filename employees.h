@@ -11,6 +11,8 @@ struct Employee
     float transportAllowance;
 };
 
+extern struct Employee employees[100];
+extern int employeeCount;
 void employeeMenu(void);
 void addEmployee(struct Employee employees[], int *employeeCount);
 void displayEmployees(struct Employee employees[], int employeeCount);
