@@ -139,4 +139,24 @@ void identifyExceededBudgets(DepartmentBudget departments[], int count)
     {
         printf("No departments have exceeded their budgets. \n");
     }
+    
+void budgetMenu(void)
+{
+    int choice;
+    do {
+        printf("\n===== BUDGET MANAGEMENT =====\n");
+        printf("1. Enter Department Budget\n2. Enter Expenditure\n");
+        printf("3. Display Budget Information\n4. Departments Over Budget\n");
+        printf("5. Return to Main Menu\n");
+        choice = readInt("Enter your choice: ", 1, 5);
+        switch (choice) {
+            case 1: enterBudget(departments, &departmentCount); break;
+            case 2: enterExpenditure(departments, departmentCount); break;
+            case 3: displayBudgetInformation(departments, departmentCount); break;
+            case 4: identifyExceededBudgets(departments, departmentCount); break;
+            case 5: printf("Returning to Main Menu.\n"); break;
+        }
+    } while (choice != 5);
 }
+}
+
