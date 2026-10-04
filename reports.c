@@ -202,3 +202,11 @@ void displayReports(const struct Employee employees[], int empCount,
         }
     } while (choice != 5);
 }
+
+void reportsMenu(void)
+{
+    displayReports(employees, employeeCount,
+                   departments, departmentCount,
+                   suppliers, supplierCount,
+                   assets, assetCount);
+}
