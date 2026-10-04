@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include "budget.h"
+#include "input.h"
+
+DepartmentBudget departments[MAX_DEPARTMENTS];
+int departmentCount = 0;
 
 void enterBudget(DepartmentBudget departments[], int *count)
 {
