@@ -18,5 +18,5 @@ void displayReports(const struct Employee employees[], int empCount,
     const DepartmentBudget budgets[], int budCount,
     const Supplier supplierList[], int supplierTotal,
     const Asset assetList[], int assetTotal);
-
+void reportsMenu(void);
 #endif
