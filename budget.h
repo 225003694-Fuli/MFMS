@@ -10,6 +10,9 @@ typedef struct {
     float expenditure;
 } DepartmentBudget;
 
+extern DepartmentBudget departments[MAX_DEPARTMENTS];
+extern int departmentCount;
+void budgetMenu(void);
 void enterBudget(DepartmentBudget departments[], int *count);
 void enterExpenditure(DepartmentBudget departments[], int count);
 float calculateRemainingBudget(DepartmentBudget department);
