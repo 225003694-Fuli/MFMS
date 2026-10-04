@@ -9,7 +9,7 @@ double grossSalary(const struct Employee *e){
 
 static void printLine(char ch, int n){
     int i;
-    for (i = 0; i < n; i++)
+    for(i = 0; i < n; i++)
     putchar(ch);
     putchar('\n');
 }
