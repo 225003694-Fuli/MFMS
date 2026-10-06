@@ -1,0 +1,59 @@
+# Municipal Financial Management System
+
+## Group members
+| Student No. | Name | Responsibility |
+|---|---|---|
+| 225003694 | Fuli Ela Aimerance | Employee Management |
+| 223095796 | Chantelle Kauejao | Budget Management |
+| 225006715 | Malakia Muyenga | Supplier Management |
+| 225086239 | Helena kongolo | Asset Management |
+| 226068706 | Hileni Thomas | Reports |
+| 226165752 | Musolo Gedeon | Functions, integration and validation (main.c, input.c) |
+| 225172569 | Othello Joseph | Testing, documentation and Git coordination |
+
+## Project description
+MFMS is a menu-driven C99 console program that helps a municipality keep track of employees, departmental budgets, suppliers and assets, and produce basic reports. It is the foundation version of the system and will be extended in Project B.
+
+## System features
+- Employee management: add, display, search and calculate salary information.
+- Budget management: enter budgets and expenditure, calculate remaining budget and identify departments over budget.
+- Supplier management: add, display, search and compare suppliers.
+- Asset management: add, display, search and report on municipal assets.
+- Reports: employee, budget, supplier and asset reports.
+- Input validation for menu choices and key numeric/text inputs.
+
+## Project structure
+```text
+MFMS/
+├── main.c
+├── input.c
+├── input.h
+├── employees.c
+├── employees.h
+├── budget.c
+├── budget.h
+├── suppliers.c
+├── suppliers.h
+├── assets.c
+├── assets.h
+├── reports.c
+├── reports.h
+├── README.md
+└── TESTING.md
+```
+
+## Compilation instructions
+In the project folder, run:
+```bash
+gcc -std=c99 -Wall -Wextra main.c input.c employees.c budget.c suppliers.c assets.c reports.c -o mfms
+```
+
+## How to run
+On Windows:
+```text
+mfms.exe
+```
+On Linux/macOS:
+```bash
+./mfms
+```
